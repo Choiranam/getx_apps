@@ -53,6 +53,15 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  assets:
+    - assets/images/classic_cheeseburger.jpeg
+    - assets/images/bacon_bbq_burger.jpeg
+    - assets/images/mushroom_swiss_burger.jpeg
+    - assets/images/jalapeno_burger.jpeg
+    - assets/images/veggie_burger.jpeg
+    - assets/images/double_decker_burger.jpeg
+    - assets/images/fish_burger.jpeg
+    - assets/images/breakfast_burger.jpeg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
