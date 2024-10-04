@@ -22,7 +22,7 @@ class Home extends StatelessWidget {
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
-                color: Colors.redAccent, // Warna teks
+                color: Colors.redAccent,
               ),
             ),
             SizedBox(height: 8),
@@ -38,7 +38,7 @@ class Home extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.green, // Warna header
+                color: Colors.green,
               ),
             ),
             SizedBox(height: 16),
@@ -61,26 +61,25 @@ class Home extends StatelessWidget {
                     margin: EdgeInsets.only(right: 16),
                     child: ReusableCard(
                       imageAsset: 'assets/images/${burgerNames[index]}.jpeg',
-                      title: burgerNames[index].replaceAll('_', ' ').capitalize(),
+                      title:
+                          burgerNames[index].replaceAll('_', ' ').capitalize(),
                       subtitle: 'Delicious burger with amazing flavors.',
-                      price: '\$${(index + 1) * 5}.00',
+                      // Mengganti '$' menjadi 'Rp.'
+                      price: 'Rp.${(index + 1) * 5000}',
                     ),
                   );
                 },
               ),
             ),
-            SizedBox(height: 32),
 
-            // Bagian Our Recommendations
             Text(
-              'Our Recommendations',
+              'Top Picks',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: Colors.green,
               ),
             ),
-            SizedBox(height: 16),
             ListView.builder(
               itemCount: 3,
               shrinkWrap: true,
@@ -95,10 +94,14 @@ class Home extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: ReusableCard(
-                    imageAsset: 'assets/images/${recommendedBurgers[index]}.jpeg',
-                    title: recommendedBurgers[index].replaceAll('_', ' ').capitalize(),
+                    imageAsset:
+                        'assets/images/${recommendedBurgers[index]}.jpeg',
+                    title: recommendedBurgers[index]
+                        .replaceAll('_', ' ')
+                        .capitalize(),
                     subtitle: 'A delicious recommendation for you!',
-                    price: '\$${(index + 1) * 6}.00',
+                    // Mengganti '$' menjadi 'Rp.'
+                    price: 'Rp.${(index + 1) * 6000}',
                     isHorizontal: true,
                   ),
                 );
