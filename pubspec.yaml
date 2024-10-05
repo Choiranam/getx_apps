@@ -62,6 +62,7 @@ flutter:
     - assets/images/double_decker_burger.jpeg
     - assets/images/fish_burger.jpeg
     - assets/images/breakfast_burger.jpeg
+    - assets/images/fritzy.jpeg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
