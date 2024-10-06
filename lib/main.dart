@@ -1,26 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_apps/pages/home_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:getx_apps/pages/login_page.dart';
+import 'package:getx_apps/pages/home_page.dart';
+import 'package:getx_apps/controller/login_controller.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  // Inisialisasi SharedPreferences
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  final bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
+
+  // Inisialisasi LoginController
+  Get.put(LoginController()); // Inisialisasi LoginController
+
+  runApp(MyApp(isLoggedIn: isLoggedIn));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final bool isLoggedIn;
 
-  // This widget is the root of your application.
+  const MyApp({Key? key, required this.isLoggedIn}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      title: 'Food App',
+      initialRoute: isLoggedIn ? '/homepage' : '/login',
       getPages: [
-        // list all pages here    
-        GetPage(name: '/', page: () => LoginPage(),),
-        GetPage(name: '/homepage', page: () => HomePage(),),
+        GetPage(name: '/login', page: () => LoginPage()),
+        GetPage(name: '/homepage', page: () => HomePage()),
       ],
+      debugShowCheckedModeBanner: false,
     );
   }
 }

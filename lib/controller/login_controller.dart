@@ -1,15 +1,27 @@
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginController extends GetxController {
   var username = ''.obs;
   var password = ''.obs;
 
-  // Fungsi untuk validasi login
-  bool login() {
+  Future<bool> login() async {
+    // Simulasi login
+    await Future.delayed(Duration(seconds: 1)); // Delay untuk simulasi
     if (username.value == 'admin' && password.value == 'admin') {
+      // Simpan status login
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setBool('isLoggedIn', true);
       return true;
-    } else {
-      return false;
     }
+    return false;
+  }
+
+  Future<void> logout() async {
+    // Hapus status login
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('isLoggedIn', false);
+    username.value = '';
+    password.value = '';
   }
 }

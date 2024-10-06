@@ -6,6 +6,7 @@ import 'package:getx_apps/pages/menus/favorites.dart';
 import 'package:getx_apps/pages/menus/cart.dart';
 import 'package:getx_apps/pages/menus/profile.dart';
 import 'package:getx_apps/pages/menus/custom_bottom_navigation_bar.dart';
+import 'package:getx_apps/pages/login_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:getx_apps/controller/login_controller.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
-  final loginController = Get.put(LoginController()); // Menginisialisasi controller
+  final loginController =
+      Get.put(LoginController()); // Menginisialisasi controller
 
   @override
   Widget build(BuildContext context) {
@@ -63,13 +65,29 @@ class LoginPage extends StatelessWidget {
               ),
               SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {
-                  if (loginController.login()) {
-                    Get.toNamed('homepage');
+                onPressed: () async {
+                  // Validasi jika username dan password tidak kosong
+                  if (loginController.username.value.isNotEmpty &&
+                      loginController.password.value.isNotEmpty) {
+                    bool success =
+                        await loginController.login(); // Tunggu hasil login
+                    if (success) {
+                      Get.toNamed('/homepage');
+                    } else {
+                      Get.snackbar(
+                        'Error',
+                        'Username atau password salah',
+                        snackPosition: SnackPosition.BOTTOM,
+                        backgroundColor: Colors.redAccent,
+                        colorText: Colors.white,
+                      );
+                    }
                   } else {
-                    Get.snackbar('Error', 'Username atau password salah',
+                    Get.snackbar(
+                      'Error',
+                      'Silakan isi semua field',
                       snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: Colors.redAccent,
+                      backgroundColor: Colors.orange,
                       colorText: Colors.white,
                     );
                   }

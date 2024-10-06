@@ -1,49 +1,60 @@
 import 'package:flutter/material.dart';
-import 'package:getx_apps/components/reusable_card.dart';
-import 'package:getx_apps/components/reusable_textfield.dart';
+import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:getx_apps/controller/login_controller.dart';
 
 class Profile extends StatelessWidget {
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
+  final LoginController loginController = Get.find<LoginController>();
 
   @override
   Widget build(BuildContext context) {
+    String name = 'Muhammad Choirulanam';
+    String email = 'mchoiranam@gmail.com';
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
-        automaticallyImplyLeading: false, // Hapus panah kembali
+        automaticallyImplyLeading: false,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ReusableTextField(
-                hintText: 'Nama Lengkap',
-                controller: nameController,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Foto Profil
+            CircleAvatar(
+              radius: 50, // Ukuran foto profil
+              backgroundImage: AssetImage('assets/images/fritzy.jpeg'),
+            ),
+            SizedBox(height: 20),
+            // Nama
+            Text(
+              name,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
-              SizedBox(height: 16),
-              ReusableTextField(
-                hintText: 'Email',
-                controller: emailController,
+            ),
+            SizedBox(height: 10),
+            // Email
+            Text(
+              email,
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey,
               ),
-              SizedBox(height: 16),
-              ReusableTextField(
-                hintText: 'Nomor Telepon',
-                controller: phoneController,
+            ),
+            SizedBox(height: 30),
+            // Tombol Logout
+            ElevatedButton(
+              onPressed: () async {
+                await loginController.logout();
+                Get.offNamed('login');
+              },
+              child: Text("Logout"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.redAccent,
               ),
-              SizedBox(height: 20),
-              ReusableCard(
-                imageAsset: 'assets/images/fritzy.jpeg',
-                title: 'Judul',
-                subtitle: 'Deskripsi',
-                price: 'Harga',
-                isHorizontal: false,
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
