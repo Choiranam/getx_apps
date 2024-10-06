@@ -21,7 +21,6 @@ class HomePage extends StatelessWidget {
     return Obx(() {
       return Scaffold(
         appBar: AppBar(
-          title: Text('Food App'),
           centerTitle: true,
         ),
         body: menus[bottomNavContoller.selectedIndex.value],
