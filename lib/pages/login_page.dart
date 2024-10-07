@@ -7,7 +7,7 @@ class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
   final loginController =
-      Get.put(LoginController()); // Menginisialisasi controller
+      Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class LoginPage extends StatelessWidget {
                   border: OutlineInputBorder(),
                 ),
                 onChanged: (value) {
-                  loginController.username.value = value; // Update username
+                  loginController.username.value = value;
                 },
               ),
               SizedBox(height: 10),
@@ -60,17 +60,16 @@ class LoginPage extends StatelessWidget {
                   border: OutlineInputBorder(),
                 ),
                 onChanged: (value) {
-                  loginController.password.value = value; // Update password
+                  loginController.password.value = value;
                 },
               ),
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () async {
-                  // Validasi jika username dan password tidak kosong
                   if (loginController.username.value.isNotEmpty &&
                       loginController.password.value.isNotEmpty) {
                     bool success =
-                        await loginController.login(); // Tunggu hasil login
+                        await loginController.login();
                     if (success) {
                       Get.toNamed('/homepage');
                     } else {

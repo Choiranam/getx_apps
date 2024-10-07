@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_apps/controller/bottom_nav_contoller.dart';
 import 'package:getx_apps/pages/menus/home.dart';
-import 'package:getx_apps/pages/menus/favorites.dart';
 import 'package:getx_apps/pages/menus/cart.dart';
 import 'package:getx_apps/pages/menus/profile.dart';
 import 'package:getx_apps/pages/menus/custom_bottom_navigation_bar.dart';
@@ -15,8 +14,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final BottomNavContoller bottomNavContoller = Get.put(BottomNavContoller());
 
-    // Ubah urutan halaman
-    final List<Widget> menus = [Home(), Favorites(), Cart(), Profile()];
+    final List<Widget> menus = [Home(), Cart(), Profile()];
 
     return Obx(() {
       return Scaffold(

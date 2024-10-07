@@ -18,7 +18,7 @@ class ReusableTextField extends StatelessWidget {
       controller: controller,
       readOnly: readOnly,
       decoration: InputDecoration(
-        hintText: hintText.isEmpty ? null : hintText, // Menampilkan hintText jika tidak kosong
+        hintText: hintText.isEmpty ? null : hintText,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),

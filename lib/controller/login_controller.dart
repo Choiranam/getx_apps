@@ -6,10 +6,8 @@ class LoginController extends GetxController {
   var password = ''.obs;
 
   Future<bool> login() async {
-    // Simulasi login
     await Future.delayed(Duration(seconds: 1)); // Delay untuk simulasi
     if (username.value == 'admin' && password.value == 'admin') {
-      // Simpan status login
       SharedPreferences prefs = await SharedPreferences.getInstance();
       await prefs.setBool('isLoggedIn', true);
       return true;

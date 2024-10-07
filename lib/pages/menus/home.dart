@@ -43,7 +43,7 @@ class Home extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Container(
-              height: 300,
+              height: 250,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 5,
@@ -61,9 +61,10 @@ class Home extends StatelessWidget {
                     margin: EdgeInsets.only(right: 16),
                     child: ReusableCard(
                       imageAsset: 'assets/images/${burgerNames[index]}.jpeg',
-                      title:
-                          burgerNames[index].replaceAll('_', ' ').capitalize(),
-                      subtitle: 'Delicious burger with amazing flavors.',
+                      title: burgerNames[index]
+                          .replaceAll('_', ' ')
+                          .capitalize(),
+                          
                       // Mengganti '$' menjadi 'Rp.'
                       price: 'Rp.${(index + 1) * 5000}',
                     ),
@@ -72,8 +73,9 @@ class Home extends StatelessWidget {
               ),
             ),
 
+            // Bagian Recommended Burgers
             Text(
-              'Top Picks',
+              'Recommended Burgers',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -94,13 +96,10 @@ class Home extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: ReusableCard(
-                    imageAsset:
-                        'assets/images/${recommendedBurgers[index]}.jpeg',
+                    imageAsset: 'assets/images/${recommendedBurgers[index]}.jpeg',
                     title: recommendedBurgers[index]
                         .replaceAll('_', ' ')
                         .capitalize(),
-                    subtitle: 'A delicious recommendation for you!',
-                    // Mengganti '$' menjadi 'Rp.'
                     price: 'Rp.${(index + 1) * 6000}',
                     isHorizontal: true,
                   ),

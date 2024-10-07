@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 class ReusableCard extends StatelessWidget {
   final String imageAsset;
   final String title;
-  final String subtitle;
   final String price;
   final bool isHorizontal;
 
   const ReusableCard({
     required this.imageAsset,
     required this.title,
-    required this.subtitle,
     required this.price,
     this.isHorizontal = false,
     Key? key,
@@ -26,14 +24,16 @@ class ReusableCard extends StatelessWidget {
       child: isHorizontal
           ? Row(
               children: [
-                Image.asset(imageAsset, width: 80, height: 80, fit: BoxFit.cover),
+                Image.asset(imageAsset,
+                    width: 80, height: 80, fit: BoxFit.cover),
                 SizedBox(width: 10),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
-                      Text(subtitle),
+                      Text(title,
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      // Hapus bagian subtitle
                       Text(price, style: TextStyle(color: Colors.red)),
                     ],
                   ),
@@ -48,8 +48,9 @@ class ReusableCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
-                      Text(subtitle),
+                      Text(title,
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      // Hapus bagian subtitle
                       Text(price, style: TextStyle(color: Colors.red)),
                     ],
                   ),
