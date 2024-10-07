@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_apps/controller/bottom_nav_contoller.dart';
+import 'package:getx_apps/controller/bottom_nav_controller.dart';
 import 'package:getx_apps/pages/menus/home.dart';
 import 'package:getx_apps/pages/menus/cart.dart';
 import 'package:getx_apps/pages/menus/profile.dart';
@@ -12,7 +12,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final BottomNavContoller bottomNavContoller = Get.put(BottomNavContoller());
+    // Ambil instance BottomNavController yang sudah ada
+    final BottomNavController bottomNavController = Get.find<BottomNavController>();
 
     final List<Widget> menus = [Home(), Cart(), Profile()];
 
@@ -20,11 +21,13 @@ class HomePage extends StatelessWidget {
       return Scaffold(
         appBar: AppBar(
           centerTitle: true,
+          title: Text("Home"),
+          backgroundColor: Colors.redAccent,
         ),
-        body: menus[bottomNavContoller.selectedIndex.value],
+        body: menus[bottomNavController.selectedIndex.value],
         bottomNavigationBar: CustomBottomNavigationBar(
-          selectedIndex: bottomNavContoller.selectedIndex.value,
-          onTap: bottomNavContoller.changeIndexMenu,
+          selectedIndex: bottomNavController.selectedIndex.value,
+          onTap: bottomNavController.changeIndexMenu,
         ),
       );
     });

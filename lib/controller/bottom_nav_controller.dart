@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class BottomNavContoller extends GetxController {
+class BottomNavController extends GetxController {
 
   // contains all logical operations method and variables
   var selectedIndex = 0.obs;

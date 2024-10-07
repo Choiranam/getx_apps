@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:getx_apps/pages/login_page.dart';
 import 'package:getx_apps/pages/home_page.dart';
 import 'package:getx_apps/controller/login_controller.dart';
+import 'package:getx_apps/controller/bottom_nav_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,10 +13,11 @@ void main() async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
   final bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
 
-  // Inisialisasi LoginController
-  Get.put(LoginController()); // Inisialisasi LoginController
+  // Inisialisasi Controller
+  Get.put(LoginController());
+  Get.put(BottomNavController());
 
-  runApp(MyApp(isLoggedIn: isLoggedIn));
+  runApp(MyApp(isLoggedIn: isLoggedIn)); // Memastikan MyApp diinisialisasi di sini
 }
 
 class MyApp extends StatelessWidget {

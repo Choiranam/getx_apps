@@ -6,8 +6,8 @@ import 'package:getx_apps/controller/login_controller.dart';
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
-  final loginController =
-      Get.put(LoginController());
+  // Ambil instance LoginController yang sudah ada
+  final LoginController loginController = Get.find<LoginController>();
 
   @override
   Widget build(BuildContext context) {
@@ -68,8 +68,7 @@ class LoginPage extends StatelessWidget {
                 onPressed: () async {
                   if (loginController.username.value.isNotEmpty &&
                       loginController.password.value.isNotEmpty) {
-                    bool success =
-                        await loginController.login();
+                    bool success = await loginController.login();
                     if (success) {
                       Get.toNamed('/homepage');
                     } else {
