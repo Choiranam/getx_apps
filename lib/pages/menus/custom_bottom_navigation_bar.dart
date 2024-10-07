@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   final int selectedIndex;
@@ -13,12 +14,11 @@ class CustomBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<IconData> iconList = [
       Icons.home,
-      Icons.favorite,
-      Icons.shopping_cart,
+      Icons.shopping_cart, // Menghapus Icons.favorite
       Icons.person,
     ];
 
-    final List<String> labels = ["Home", "Favorites", "Cart", "Profile"];
+    final List<String> labels = ["Home", "Cart", "Profile"]; // Hanya 3 label
 
     return Container(
       decoration: BoxDecoration(
@@ -45,7 +45,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
                 size: selectedIndex == index ? 30 : 24,
               ),
             ),
-            label: labels[index],
+            label: labels[index], // Pastikan jumlah labels dan icons sama
           );
         }),
         selectedItemColor: Colors.blueAccent,
