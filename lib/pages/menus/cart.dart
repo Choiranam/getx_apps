@@ -50,8 +50,8 @@ class Cart extends StatelessWidget {
                 child: Row(
                   children: List.generate(8, (index) {
                     List<String> burgerNames = [
-                      'classic_cheeseburger',
                       'bacon_bbq_burger',
+                      'classic_cheeseburger',
                       'mushroom_swiss_burger',
                       'jalapeno_burger',
                       'veggie_burger',
