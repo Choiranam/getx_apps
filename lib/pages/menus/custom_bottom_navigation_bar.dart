@@ -13,11 +13,11 @@ class CustomBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<IconData> iconList = [
       Icons.home,
-      Icons.shopping_cart, // Menghapus Icons.favorite
+      Icons.shopping_cart,
       Icons.person,
     ];
 
-    final List<String> labels = ["Home", "Cart", "Profile"]; // Hanya 3 label
+    final List<String> labels = ["Home", "Cart", "Profile"];
 
     return Container(
       decoration: BoxDecoration(
@@ -44,7 +44,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
                 size: selectedIndex == index ? 30 : 24,
               ),
             ),
-            label: labels[index], // Pastikan jumlah labels dan icons sama
+            label: labels[index],
           );
         }),
         selectedItemColor: Colors.blueAccent,

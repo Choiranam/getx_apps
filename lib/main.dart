@@ -13,11 +13,10 @@ void main() async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
   final bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
 
-  // Inisialisasi Controller
   Get.put(LoginController());
   Get.put(BottomNavController());
 
-  runApp(MyApp(isLoggedIn: isLoggedIn)); // Memastikan MyApp diinisialisasi di sini
+  runApp(MyApp(isLoggedIn: isLoggedIn));
 }
 
 class MyApp extends StatelessWidget {

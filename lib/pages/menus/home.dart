@@ -65,7 +65,6 @@ class Home extends StatelessWidget {
                           .replaceAll('_', ' ')
                           .capitalize(),
                           
-                      // Mengganti '$' menjadi 'Rp.'
                       price: 'Rp.${(index + 1) * 5000}',
                     ),
                   );
@@ -73,7 +72,6 @@ class Home extends StatelessWidget {
               ),
             ),
 
-            // Bagian Recommended Burgers
             Text(
               'Recommended Burgers',
               style: TextStyle(

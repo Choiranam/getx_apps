@@ -6,7 +6,6 @@ import 'package:getx_apps/controller/login_controller.dart';
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
-  // Ambil instance LoginController yang sudah ada
   final LoginController loginController = Get.find<LoginController>();
 
   @override
@@ -45,7 +44,7 @@ class LoginPage extends StatelessWidget {
               SizedBox(height: 20),
               TextField(
                 decoration: InputDecoration(
-                  labelText: 'Email',
+                  labelText: 'Username',
                   border: OutlineInputBorder(),
                 ),
                 onChanged: (value) {
@@ -56,7 +55,7 @@ class LoginPage extends StatelessWidget {
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                  labelText: 'Kata Sandi',
+                  labelText: 'Password',
                   border: OutlineInputBorder(),
                 ),
                 onChanged: (value) {

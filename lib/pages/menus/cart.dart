@@ -42,9 +42,8 @@ class Cart extends StatelessWidget {
               ),
             ),
             SizedBox(height: 16),
-            // Menggunakan Container untuk menampilkan kartu burger secara horizontal
             Container(
-              height: 290, // Tinggi kontainer untuk ListView
+              height: 290,
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -75,16 +74,14 @@ class Cart extends StatelessWidget {
                               price: 'Rp.${(index + 1) * 5000}',
                             ),
                           ),
-                          SizedBox(height: 8), // Jarak antara kartu dan tombol
+                          SizedBox(height: 8),
                           ElevatedButton(
                             onPressed: () {
-                              // Tindakan ketika tombol ditekan
-                              // Misalnya: menghapus item dari keranjang
                             },
                             child: Text('Buy'),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.red, // Warna tombol
-                              minimumSize: Size.fromHeight(40), // Ukuran tombol
+                              backgroundColor: Colors.red,
+                              minimumSize: Size.fromHeight(40),
                             ),
                           ),
                         ],

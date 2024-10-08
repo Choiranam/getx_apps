@@ -12,7 +12,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Ambil instance BottomNavController yang sudah ada
     final BottomNavController bottomNavController = Get.find<BottomNavController>();
 
     final List<Widget> menus = [Home(), Cart(), Profile()];
