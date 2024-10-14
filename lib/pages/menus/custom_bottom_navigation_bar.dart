@@ -13,11 +13,12 @@ class CustomBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<IconData> iconList = [
       Icons.home,
+      Icons.task,
       Icons.shopping_cart,
       Icons.person,
     ];
 
-    final List<String> labels = ["Home", "Cart", "Profile"];
+    final List<String> labels = ["Home", "Order", "Cart", "Profile"];
 
     return Container(
       decoration: BoxDecoration(

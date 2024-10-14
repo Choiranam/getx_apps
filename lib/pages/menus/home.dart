@@ -17,6 +17,7 @@ class Home extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Title Section
             Text(
               'Welcome to Food App',
               style: TextStyle(
@@ -28,11 +29,14 @@ class Home extends StatelessWidget {
             SizedBox(height: 8),
             Text(
               'Discover delicious burgers from around the world!',
-              style: TextStyle(fontSize: 16, color: Colors.black54),
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.black54,
+              ),
             ),
             SizedBox(height: 32),
 
-            // Bagian Top Picks
+            // Top Picks Section
             Text(
               'Top Picks',
               style: TextStyle(
@@ -57,21 +61,23 @@ class Home extends StatelessWidget {
                   ];
 
                   return Container(
-                    width: 140,
+                    width: 160,
                     margin: EdgeInsets.only(right: 16),
                     child: ReusableCard(
                       imageAsset: 'assets/images/${burgerNames[index]}.jpeg',
                       title: burgerNames[index]
                           .replaceAll('_', ' ')
                           .capitalize(),
-                          
                       price: 'Rp.${(index + 1) * 5000}',
+                      isHorizontal: false,
                     ),
                   );
                 },
               ),
             ),
+            SizedBox(height: 32),
 
+            // Recommended Burgers Section
             Text(
               'Recommended Burgers',
               style: TextStyle(
@@ -98,7 +104,7 @@ class Home extends StatelessWidget {
                     title: recommendedBurgers[index]
                         .replaceAll('_', ' ')
                         .capitalize(),
-                    price: 'Rp.${(index + 1) * 6000}',
+                    price: 'Rp. ${(index + 1) * 6000}',
                     isHorizontal: true,
                   ),
                 );

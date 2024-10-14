@@ -5,6 +5,7 @@ import 'package:getx_apps/pages/login_page.dart';
 import 'package:getx_apps/pages/home_page.dart';
 import 'package:getx_apps/controller/login_controller.dart';
 import 'package:getx_apps/controller/bottom_nav_controller.dart';
+import 'package:getx_apps/controller/cart_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,6 +16,7 @@ void main() async {
 
   Get.put(LoginController());
   Get.put(BottomNavController());
+  Get.put(CartController()); // Tambahkan CartController
 
   runApp(MyApp(isLoggedIn: isLoggedIn));
 }

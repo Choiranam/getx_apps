@@ -16,11 +16,6 @@ class Profile extends StatelessWidget {
     String password = '********';
 
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Colors.redAccent,
-        centerTitle: true,
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
