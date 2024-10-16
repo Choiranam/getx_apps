@@ -13,7 +13,7 @@ class Profile extends StatelessWidget {
     String birthday = '29 April 2008';
     String phone = '+62 856-0121-1156';
     String instagram = '@choiranamm';
-    String password = '********';
+    String password = '*****';
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -67,9 +67,7 @@ class Profile extends StatelessWidget {
               icon: Icons.lock_outline,
               title: password,
             ),
-
             SizedBox(height: 20),
-
             ElevatedButton(
               onPressed: () async {
                 await loginController.logout();

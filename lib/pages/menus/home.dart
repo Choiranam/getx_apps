@@ -65,9 +65,8 @@ class Home extends StatelessWidget {
                     margin: EdgeInsets.only(right: 16),
                     child: ReusableCard(
                       imageAsset: 'assets/images/${burgerNames[index]}.jpeg',
-                      title: burgerNames[index]
-                          .replaceAll('_', ' ')
-                          .capitalize(),
+                      title:
+                          burgerNames[index].replaceAll('_', ' ').capitalize(),
                       price: 'Rp.${(index + 1) * 5000}',
                       isHorizontal: false,
                     ),
@@ -77,7 +76,6 @@ class Home extends StatelessWidget {
             ),
             SizedBox(height: 32),
 
-            // Recommended Burgers Section
             Text(
               'Recommended Burgers',
               style: TextStyle(
@@ -100,7 +98,8 @@ class Home extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: ReusableCard(
-                    imageAsset: 'assets/images/${recommendedBurgers[index]}.jpeg',
+                    imageAsset:
+                        'assets/images/${recommendedBurgers[index]}.jpeg',
                     title: recommendedBurgers[index]
                         .replaceAll('_', ' ')
                         .capitalize(),

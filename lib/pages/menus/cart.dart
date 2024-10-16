@@ -67,13 +67,16 @@ class _CartState extends State<Cart> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         image: DecorationImage(
-                          image: AssetImage('assets/images/${item['title'].toLowerCase().replaceAll(" ", "_")}.jpeg'), // Ganti dengan nama file gambar yang sesuai
+                          image: AssetImage(
+                              'assets/images/${item['title'].toLowerCase().replaceAll(" ", "_")}.jpeg'),
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
-                    title: Text(item['title'], style: TextStyle(fontWeight: FontWeight.bold)),
-                    subtitle: Text('\$${item['price']}', style: TextStyle(color: Colors.grey[600])),
+                    title: Text(item['title'],
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    subtitle: Text('\$${item['price']}',
+                        style: TextStyle(color: Colors.grey[600])),
                     trailing: IconButton(
                       icon: Icon(Icons.delete, color: Colors.red),
                       onPressed: () {

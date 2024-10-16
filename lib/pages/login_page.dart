@@ -11,10 +11,6 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Login"),
-        backgroundColor: Colors.redAccent,
-      ),
       body: Center(
         child: Container(
           padding: EdgeInsets.all(20),
@@ -74,8 +70,8 @@ class LoginPage extends StatelessWidget {
                       Get.snackbar(
                         'Error',
                         'Username atau password salah',
-                        snackPosition: SnackPosition.BOTTOM,
-                        backgroundColor: Colors.redAccent,
+                        snackPosition: SnackPosition.TOP,
+                        backgroundColor: Colors.orange,
                         colorText: Colors.white,
                       );
                     }
@@ -83,7 +79,7 @@ class LoginPage extends StatelessWidget {
                     Get.snackbar(
                       'Error',
                       'Silakan isi semua field',
-                      snackPosition: SnackPosition.BOTTOM,
+                      snackPosition: SnackPosition.TOP,
                       backgroundColor: Colors.orange,
                       colorText: Colors.white,
                     );

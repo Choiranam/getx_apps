@@ -12,7 +12,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final BottomNavController bottomNavController = Get.find<BottomNavController>();
+    final BottomNavController bottomNavController =
+        Get.find<BottomNavController>();
 
     final List<Widget> menus = [Home(), Order(), Cart(), Profile()];
 

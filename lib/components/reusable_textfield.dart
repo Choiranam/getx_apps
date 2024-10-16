@@ -22,7 +22,8 @@ class ReusableTextField extends StatelessWidget {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
-        contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       ),
     );
   }
