@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:getx_apps/pages/login_page.dart';
 import 'package:getx_apps/pages/home_page.dart';
+import 'package:getx_apps/pages/menus/cart.dart';
 import 'package:getx_apps/controller/login_controller.dart';
 import 'package:getx_apps/controller/bottom_nav_controller.dart';
 import 'package:getx_apps/controller/cart_controller.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/login', page: () => LoginPage()),
         GetPage(name: '/homepage', page: () => HomePage()),
+        GetPage(name: '/cart', page: () => Cart()),
       ],
       debugShowCheckedModeBanner: false,
     );

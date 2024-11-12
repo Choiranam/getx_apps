@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_apps/database_helper.dart';
+import 'package:getx_apps/pages/cart_page/responsive_cart_layout.dart';
 
 class Cart extends StatefulWidget {
   @override
@@ -50,43 +51,10 @@ class _CartState extends State<Cart> {
       appBar: AppBar(
         title: Text("Cart"),
       ),
-      body: cartItems.isEmpty
-          ? Center(child: Text("No items in the cart"))
-          : ListView.builder(
-              itemCount: cartItems.length,
-              itemBuilder: (context, index) {
-                final item = cartItems[index];
-                return Card(
-                  margin: EdgeInsets.all(10),
-                  elevation: 5,
-                  child: ListTile(
-                    contentPadding: EdgeInsets.all(10),
-                    leading: Container(
-                      width: 50,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        image: DecorationImage(
-                          image: AssetImage(
-                              'assets/images/${item['title'].toLowerCase().replaceAll(" ", "_")}.jpeg'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    title: Text(item['title'],
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                    subtitle: Text('\$${item['price']}',
-                        style: TextStyle(color: Colors.grey[600])),
-                    trailing: IconButton(
-                      icon: Icon(Icons.delete, color: Colors.red),
-                      onPressed: () {
-                        _showDeleteDialog(item['id'], item['title']);
-                      },
-                    ),
-                  ),
-                );
-              },
-            ),
+      body: ResponsiveCartLayout(
+        cartItems: cartItems, // Daftar item cart
+        showDeleteDialog: _showDeleteDialog, // Fungsi untuk menampilkan dialog konfirmasi
+      ),
     );
   }
 }
